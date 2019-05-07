@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+              <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+      <ion-title>
+          Students List
+      </ion-title>
+  </ion-toolbar>
+  </ion-header>
+  <ion-content>
+  <ion-card *ngFor="let s of list">
+      
+    <ion-card-header>
+      <ion-card-title>
+        <ion-item>
+            {{s.firstname}} {{s.lastname}}   
+            <ion-icon name="create"  padding="10px" color = "primary" (click) ="onEditStudent(s)"></ion-icon>
+            <ion-icon name="trash"  slot="end" color="danger" (click) ="onDeleteStudent(s)"></ion-icon>
+        </ion-item>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+          <ion-card-subtitle ><ion-icon name="clipboard"></ion-icon>  Date of Birth:{{s.dob}}</ion-card-subtitle>
+          <ion-card-subtitle><ion-icon name="document"></ion-icon>   Class: {{s.stdclass}}</ion-card-subtitle>
+          <ion-card-subtitle><ion-icon name="book"></ion-icon>   Subject: {{s.subject}}</ion-card-subtitle>
+          <ion-card-subtitle><ion-icon name="person"></ion-icon>   Class Teacher: {{s.classteacher}}</ion-card-subtitle>
+          <ion-card-subtitle><ion-icon name="home"></ion-icon>   Address: {{s.address}}</ion-card-subtitle>
+  </ion-card-content>
+  </ion-card>
+  </ion-content>

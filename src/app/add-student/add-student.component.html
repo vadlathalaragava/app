@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+    <ion-title>
+      Add Student
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+    <ion-label position="floating" >First Name
+    </ion-label>
+    <ion-input  name="firstname" [(ngModel)]="student.firstname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label position="floating">Last Name</ion-label>
+      <ion-input  name="lastname" [(ngModel)]="student.lastname"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Date Of Birth</ion-label>
+        <ion-datetime displayFormat="DD MM YYYY" placeholder="Select Date" [(ngModel)]="student.dob"></ion-datetime>
+    </ion-item>
+
+      <ion-list>
+        <ion-item>
+            <ion-label>Select Class</ion-label>
+            <ion-select value="brown" okText="Okay" cancelText="Dismiss" [(ngModel)]="student.stdclass">
+              <ion-select-option value="first">1st</ion-select-option>
+              <ion-select-option value="two">2nd</ion-select-option>
+              <ion-select-option value="three">3rd</ion-select-option>
+              <ion-select-option value="four">4th</ion-select-option>
+              <ion-select-option value="five">5th</ion-select-option>
+              <ion-select-option value="six">6th</ion-select-option>
+              <ion-select-option value="seven">7th</ion-select-option>
+              <ion-select-option value="eight">8th</ion-select-option>
+              <ion-select-option value="nine">9th</ion-select-option>
+              <ion-select-option value="ten">10th</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+
+    <ion-list>
+        <ion-item>
+          <ion-label>Select Subjects</ion-label>
+          <ion-select multiple="true" cancelText="Nah" okText="Okay!" [(ngModel)]="student.subject">
+            <ion-select-option value="hindi">Hindi</ion-select-option>
+            <ion-select-option value="english">English</ion-select-option>
+            <ion-select-option value="maths">Maths</ion-select-option>
+            <ion-select-option value="physics">Physics</ion-select-option>
+            <ion-select-option value="chemistry">Chemistry</ion-select-option>
+            <ion-select-option value="science">Science</ion-select-option>
+            <ion-select-option value="social">Social</ion-select-option>
+            <ion-select-option value="telugu">Telugu</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+    <ion-item>
+        <ion-label position="floating">Class Teacher</ion-label>
+        <ion-input  name="classteacher" [(ngModel)]="student.classteacher"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Address</ion-label>
+      <ion-input  name="address" [(ngModel)]="student.address"></ion-input>
+    </ion-item>
+<ion-button expand="block" color="primary" (click)="onAddStudent(student)">Add Student</ion-button>
+</ion-content>
